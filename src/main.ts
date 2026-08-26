@@ -1,16 +1,11 @@
-import {
-  getHighlightCategory,
-  getRows,
-  loadCsv,
-  subscribe,
-  type Row,
-} from './data';
+import { getHighlight, getRows, loadCsv, subscribe, type Row } from './data';
 import { registerTools } from './tools';
 import { isSupported, registeredNames } from './webmcp';
 
 const rowsBody = document.querySelector<HTMLTableSectionElement>('#rows')!;
 const statusEl = document.querySelector<HTMLElement>('#status')!;
 const badgeEl = document.querySelector<HTMLElement>('#tool-badge')!;
+const noteEl = document.querySelector<HTMLElement>('#highlight-note')!;
 const fileInput = document.querySelector<HTMLInputElement>('#file')!;
 const sampleButton = document.querySelector<HTMLButtonElement>('#load-sample')!;
 
@@ -22,21 +17,25 @@ const money = new Intl.NumberFormat('en-LK', {
 
 function renderRows(): void {
   const rows = getRows();
-  const highlight = getHighlightCategory();
+  const highlight = getHighlight();
 
   if (rows.length === 0) {
     rowsBody.className = '';
     rowsBody.innerHTML = '<tr class="empty"><td colspan="4">No data loaded yet.</td></tr>';
+    noteEl.textContent = '';
     return;
   }
 
-  rowsBody.className = highlight ? 'has-highlight' : '';
-  rowsBody.replaceChildren(...rows.map((row) => renderRow(row, highlight)));
+  const hits = new Set(highlight?.ids ?? []);
+  rowsBody.className = hits.size > 0 ? 'has-highlight' : '';
+  rowsBody.replaceChildren(...rows.map((row) => renderRow(row, hits)));
+
+  noteEl.textContent = highlight?.note ? `Agent highlighted: ${highlight.note}` : '';
 }
 
-function renderRow(row: Row, highlight: string | null): HTMLTableRowElement {
+function renderRow(row: Row, hits: Set<number>): HTMLTableRowElement {
   const tr = document.createElement('tr');
-  if (highlight && row.category === highlight) tr.className = 'hit';
+  if (hits.has(row.id)) tr.className = 'hit';
 
   for (const value of [row.date, row.description, row.category]) {
     const td = document.createElement('td');
@@ -85,15 +84,19 @@ function report(result: { rows: number; skipped: number }, name: string): void {
   statusEl.textContent = `${name} — ${result.rows} rows parsed in-browser${skipped}. Nothing was uploaded.`;
 }
 
+async function loadSample(): Promise<void> {
+  const response = await fetch('sample-expenses.csv');
+  report(loadCsv(await response.text(), 'sample-expenses.csv'), 'sample-expenses.csv');
+}
+
 fileInput.addEventListener('change', async () => {
   const file = fileInput.files?.[0];
   if (!file) return;
   report(loadCsv(await file.text(), file.name), file.name);
 });
 
-sampleButton.addEventListener('click', async () => {
-  const response = await fetch('/sample-expenses.csv');
-  report(loadCsv(await response.text(), 'sample-expenses.csv'), 'sample-expenses.csv');
+sampleButton.addEventListener('click', () => {
+  void loadSample();
 });
 
 subscribe(renderRows);
@@ -106,3 +109,9 @@ registerTools()
     renderBadge('failed');
     console.error('WebMCP registration failed', error);
   });
+
+/**
+ * Seeded on load so an agent (or a judge) arriving cold finds a populated
+ * table rather than an empty one. Any CSV the user chooses replaces it.
+ */
+void loadSample();

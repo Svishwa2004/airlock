@@ -110,6 +110,13 @@ button:focus-visible,
   font-size: 13px;
 }
 
+.note {
+  min-height: 20px;
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 13px;
+}
+
 .table-wrap {
   border: 1px solid var(--line);
   border-radius: 12px;

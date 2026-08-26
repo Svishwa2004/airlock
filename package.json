@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "chrome-remote-interface": "0.33.3",
     "papaparse": "5.5.3"
   },
   "devDependencies": {

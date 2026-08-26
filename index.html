@@ -24,9 +24,11 @@
           <input id="file" type="file" accept=".csv,text/csv" />
           <span>Choose a CSV…</span>
         </label>
-        <button id="load-sample" type="button">Load sample expenses</button>
+        <button id="load-sample" type="button">Reload sample expenses</button>
         <span id="status" class="status" role="status"></span>
       </section>
+
+      <p id="highlight-note" class="note" aria-live="polite"></p>
 
       <section class="table-wrap">
         <table id="table">
