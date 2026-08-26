@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Airlock — your data stays in the tab</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="head">
+        <div>
+          <h1>Airlock</h1>
+          <p class="tagline">
+            An AI agent can analyse this spreadsheet without ever receiving it.
+            Parsing and every calculation happen in this tab.
+          </p>
+        </div>
+        <div id="tool-badge" class="badge" aria-live="polite">checking…</div>
+      </header>
+
+      <section class="controls">
+        <label class="file-input">
+          <input id="file" type="file" accept=".csv,text/csv" />
+          <span>Choose a CSV…</span>
+        </label>
+        <button id="load-sample" type="button">Load sample expenses</button>
+        <span id="status" class="status" role="status"></span>
+      </section>
+
+      <section class="table-wrap">
+        <table id="table">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Description</th>
+              <th scope="col">Category</th>
+              <th scope="col" class="num">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="rows">
+            <tr class="empty">
+              <td colspan="4">No data loaded yet.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

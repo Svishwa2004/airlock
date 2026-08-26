@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Airlock end-to-end verification</title>
+    <script>
+      window.__errors = [];
+      addEventListener('error', (e) =>
+        window.__errors.push('error: ' + (e.message ?? String(e.error)))
+      );
+      addEventListener('unhandledrejection', (e) =>
+        window.__errors.push('rejection: ' + String(e.reason))
+      );
+    </script>
+  </head>
+  <body>
+    <pre id="out">running</pre>
+    <script type="module">
+      import { loadCsv, getHighlightCategory } from './src/data.ts';
+      import { registerTools } from './src/tools.ts';
+
+      const out = document.getElementById('out');
+      const result = { errors: window.__errors };
+
+      /** executeTool serialises object returns to a JSON string (Chrome 151). */
+      const call = async (tool, args) => {
+        const raw = await document.modelContext.executeTool(tool, args);
+        result[`${tool.name}_rawType`] = typeof raw;
+        return typeof raw === 'string' ? JSON.parse(raw) : raw;
+      };
+
+      const step = async (label, fn) => {
+        try {
+          result[label] = await fn();
+        } catch (err) {
+          result[label + 'Error'] = String(err);
+        }
+      };
+
+      await step('parse', async () => {
+        const csv = await (await fetch('/sample-expenses.csv')).text();
+        return loadCsv(csv, 'sample-expenses.csv');
+      });
+
+      await step('register', async () => {
+        await registerTools();
+        return true;
+      });
+
+      let tools = [];
+      await step('tools', async () => {
+        tools = await document.modelContext.getTools();
+        return {
+          names: tools.map((t) => t.name),
+          origins: [...new Set(tools.map((t) => t.origin))],
+        };
+      });
+
+      const byName = (name) => tools.find((t) => t.name === name);
+
+      await step('describe', async () => {
+        const data = await call(byName('describe_dataset'), '{}');
+        return { rowCount: data.rowCount, categories: data.categories.length, total: data.totalAmount };
+      });
+
+      await step('sumHighlighted', async () => {
+        const res = await call(byName('sum_by_category'), '{"highlight":"Groceries"}');
+        return {
+          topThree: res.totals.slice(0, 3),
+          effect: res.effect,
+          highlightApplied: getHighlightCategory(),
+          highlightedRowsInDom: document.querySelectorAll('#rows tr.hit').length,
+        };
+      });
+
+      await step('badArg', async () => {
+        const res = await call(byName('sum_by_category'), '{"highlight":"Nonsense"}');
+        return res;
+      });
+
+      out.textContent = 'VERIFY_RESULT ' + JSON.stringify(result);
+    </script>
+  </body>
+</html>
