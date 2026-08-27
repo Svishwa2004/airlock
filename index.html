@@ -62,6 +62,16 @@
         <span id="status" class="status" role="status"></span>
       </section>
 
+      <section class="privacy" aria-labelledby="privacy-heading">
+        <h2 id="privacy-heading" class="privacy-heading">Privacy mode</h2>
+        <label class="switch">
+          <input id="privacy" type="checkbox" checked aria-describedby="privacy-state" />
+          <span class="switch-track" aria-hidden="true"></span>
+          <span class="switch-label">Withhold row details from the agent</span>
+        </label>
+        <p id="privacy-state" class="privacy-state"></p>
+      </section>
+
       <p id="highlight-note" class="note" aria-live="polite"></p>
 
       <section class="table-wrap" tabindex="0" aria-label="Loaded rows, scrollable">

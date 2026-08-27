@@ -16,7 +16,7 @@
   <body>
     <pre id="out">running</pre>
     <script type="module">
-      import { loadCsv, getHighlightCategory } from './src/data.ts';
+      import { loadCsv, getHighlight, setPrivacyMode } from './src/data.ts';
       import { registerTools } from './src/tools.ts';
 
       const out = document.getElementById('out');
@@ -68,7 +68,7 @@
         return {
           topThree: res.totals.slice(0, 3),
           effect: res.effect,
-          highlightApplied: getHighlightCategory(),
+          highlightNote: getHighlight()?.note ?? null,
           highlightedRowsInDom: document.querySelectorAll('#rows tr.hit').length,
         };
       });
@@ -76,6 +76,32 @@
       await step('badArg', async () => {
         const res = await call(byName('sum_by_category'), '{"highlight":"Nonsense"}');
         return res;
+      });
+
+      // Privacy mode is the project's actual boundary, so verify both sides of it.
+      await step('privacyOn', async () => {
+        setPrivacyMode(true);
+        const anomalies = await call(byName('find_anomalies'), '{}');
+        const filtered = await call(byName('filter_rows'), '{"category":"Transport"}');
+        return {
+          anomalyCount: anomalies.anomalyCount,
+          anomalyRowsWithheld: anomalies.rowsWithheld === true,
+          anomalyCategories: anomalies.categoriesAffected,
+          filterMatchCount: filtered.matchCount,
+          filterRowsWithheld: filtered.rowsWithheld === true,
+          noRowContentLeaked:
+            !JSON.stringify({ anomalies, filtered }).includes('Airport transfer'),
+        };
+      });
+
+      await step('privacyOff', async () => {
+        setPrivacyMode(false);
+        const anomalies = await call(byName('find_anomalies'), '{}');
+        setPrivacyMode(true);
+        return {
+          anomalyCount: anomalies.anomalyCount,
+          topAnomaly: anomalies.anomalies?.[0] ?? null,
+        };
       });
 
       out.textContent = 'VERIFY_RESULT ' + JSON.stringify(result);

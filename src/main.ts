@@ -1,6 +1,6 @@
-import { getHighlight, getRows, loadCsv, subscribe, type Row } from './data';
-import { registerTools } from './tools';
-import { isSupported, registeredNames } from './webmcp';
+import { getHighlight, getRows, loadCsv, setPrivacyMode, subscribe, type Row } from './data.ts';
+import { registerTools } from './tools.ts';
+import { isSupported, registeredNames } from './webmcp.ts';
 
 const rowsBody = document.querySelector<HTMLTableSectionElement>('#rows')!;
 const tableWrap = document.querySelector<HTMLElement>('.table-wrap')!;
@@ -10,6 +10,8 @@ const noteEl = document.querySelector<HTMLElement>('#highlight-note')!;
 const fileInput = document.querySelector<HTMLInputElement>('#file')!;
 const sampleButton = document.querySelector<HTMLButtonElement>('#load-sample')!;
 const currencySelect = document.querySelector<HTMLSelectElement>('#currency')!;
+const privacyInput = document.querySelector<HTMLInputElement>('#privacy')!;
+const privacyStateEl = document.querySelector<HTMLElement>('#privacy-state')!;
 
 const plainMoney = new Intl.NumberFormat(undefined, { maximumFractionDigits: 2 });
 
@@ -132,6 +134,26 @@ currencySelect.addEventListener('change', () => {
   money = code === 'plain' ? plainMoney : makeMoney(code);
   renderRows();
 });
+
+/**
+ * Only this control can change privacy mode — no WebMCP tool is registered for
+ * it, so the agent cannot widen its own access.
+ */
+function renderPrivacyState(): void {
+  const on = privacyInput.checked;
+  privacyStateEl.dataset.state = on ? 'on' : 'off';
+  privacyStateEl.textContent = on
+    ? 'On — the agent receives counts, totals and category names. Rows it finds are highlighted here for you to read, not sent to the model.'
+    : 'Off — the agent can now receive the contents of rows it looks at, including dates, descriptions and amounts.';
+}
+
+privacyInput.addEventListener('change', () => {
+  setPrivacyMode(privacyInput.checked);
+  renderPrivacyState();
+});
+
+setPrivacyMode(privacyInput.checked);
+renderPrivacyState();
 
 subscribe(renderRows);
 renderRows();

@@ -17,6 +17,7 @@ interface Store {
   rows: Row[];
   fileName: string | null;
   highlight: Highlight | null;
+  privacy: boolean;
 }
 
 /**
@@ -24,7 +25,7 @@ interface Store {
  * handlers at registration time, so handlers must read through a live
  * reference that survives re-renders.
  */
-const store: Store = { rows: [], fileName: null, highlight: null };
+const store: Store = { rows: [], fileName: null, highlight: null, privacy: true };
 
 const listeners = new Set<() => void>();
 
@@ -39,6 +40,22 @@ const notify = (): void => {
 export const getRows = (): Row[] => store.rows;
 export const getFileName = (): string | null => store.fileName;
 export const getHighlight = (): Highlight | null => store.highlight;
+
+/**
+ * Privacy mode is the real boundary. Keeping the file in the tab stops it being
+ * uploaded, but a tool that returns rows hands those rows to the model — and to
+ * whoever hosts it. With privacy mode on, row-returning tools answer with counts
+ * and totals while the page highlights the rows for the human to read.
+ *
+ * It defaults to on, and no tool is registered to change it: a consent gate the
+ * agent can open by itself is not a consent gate.
+ */
+export const getPrivacyMode = (): boolean => store.privacy;
+
+export const setPrivacyMode = (on: boolean): void => {
+  store.privacy = on;
+  notify();
+};
 
 export const setHighlight = (ids: number[], note: string | null): void => {
   store.highlight = ids.length > 0 ? { ids, note } : null;
