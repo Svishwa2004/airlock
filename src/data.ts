@@ -50,8 +50,15 @@ export const clearHighlight = (): void => {
   notify();
 };
 
+/**
+ * Bank exports commonly prefix or group amounts ("Rs. 1,200.50", "$2,500"), so
+ * the first numeric run is extracted rather than deleting every non-digit —
+ * deleting alone turns "Rs. 1,200.50" into ".1200.50" and yields 0.
+ */
 const toNumber = (value: unknown): number => {
-  const n = Number(String(value ?? '').replace(/[^0-9.-]/g, ''));
+  const match = String(value ?? '').match(/-?\d[\d,]*(?:\.\d+)?/);
+  if (!match) return 0;
+  const n = Number(match[0].replace(/,/g, ''));
   return Number.isFinite(n) ? n : 0;
 };
 
@@ -71,7 +78,8 @@ export function loadCsv(text: string, fileName: string): { rows: number; skipped
     const date = record.date?.trim();
     const description = record.description?.trim();
     const category = record.category?.trim();
-    if (!date || !description || !category) {
+    const amountText = record.amount?.trim();
+    if (!date || !description || !category || !amountText) {
       skipped += 1;
       continue;
     }

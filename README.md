@@ -27,9 +27,10 @@ npm install
 npm run dev
 ```
 
-Then open the printed URL in a WebMCP-enabled browser. The badge in the top-right reports how many tools registered; hover it for their names. Click **Load sample expenses** for seeded data, or choose your own CSV with `date`, `description`, `category` and `amount` columns.
+Then open the printed URL in a WebMCP-enabled browser. The badge in the top-right reports how many tools registered; hover it for their names. The sample expenses dataset loads on first paint — choose your own CSV with `date`, `description`, `category` and `amount` columns to replace it, and pick the currency in which amounts should be displayed.
 
 ```bash
+npm test          # unit tests for the analysis functions
 npm run build     # typecheck, then production build into dist/
 npm run preview   # serve the production build
 ```
@@ -40,6 +41,11 @@ npm run preview   # serve the production build
 |---|---|---|
 | `describe_dataset` | read-only | Row count, column names, category list, date range and total. Returns no rows. |
 | `sum_by_category` | read-only | Totals spending per category, largest first. Optionally highlights one category's rows in the table for the human. |
+| `filter_rows` | read-only | Matches rows by date range, category and amount bounds; highlights every match and returns a bounded preview. |
+| `monthly_trend` | read-only | Totals per calendar month, oldest first, plus the first-to-last change. |
+| `find_anomalies` | read-only | Per-category z-score outliers (categories with fewer than three rows are skipped); highlights what it finds. |
+| `top_expenses` | read-only | Largest rows by amount, highlighted in the table. |
+| `clear_highlights` | writes | Removes highlighting so all rows are legible again. |
 
 Tools are registered in [`src/tools.ts`](src/tools.ts) through the thin wrapper in [`src/webmcp.ts`](src/webmcp.ts), which calls `document.modelContext.registerTool`.
 
@@ -60,6 +66,7 @@ index.html                  page shell
 verify.html                 dev-only harness: drives every tool end to end
 public/sample-expenses.csv  seeded demo data
 src/data.ts                 CSV parsing, module-level store, aggregations
+src/data.test.ts            unit tests for the analysis functions
 src/tools.ts                WebMCP tool definitions
 src/webmcp.ts               typed wrapper around document.modelContext
 src/main.ts                 rendering and wiring

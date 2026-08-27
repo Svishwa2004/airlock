@@ -87,6 +87,24 @@ button,
   cursor: pointer;
 }
 
+.currency-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.currency-label select {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
 button:hover,
 .file-input span:hover {
   border-color: var(--dim);

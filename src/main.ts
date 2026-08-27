@@ -8,12 +8,19 @@ const badgeEl = document.querySelector<HTMLElement>('#tool-badge')!;
 const noteEl = document.querySelector<HTMLElement>('#highlight-note')!;
 const fileInput = document.querySelector<HTMLInputElement>('#file')!;
 const sampleButton = document.querySelector<HTMLButtonElement>('#load-sample')!;
+const currencySelect = document.querySelector<HTMLSelectElement>('#currency')!;
 
-const money = new Intl.NumberFormat('en-LK', {
-  style: 'currency',
-  currency: 'LKR',
-  maximumFractionDigits: 2,
-});
+const plainMoney = new Intl.NumberFormat(undefined, { maximumFractionDigits: 2 });
+
+const makeMoney = (code: string): Intl.NumberFormat => {
+  try {
+    return new Intl.NumberFormat(undefined, { style: 'currency', currency: code, maximumFractionDigits: 2 });
+  } catch {
+    return plainMoney;
+  }
+};
+
+let money = makeMoney('LKR');
 
 function renderRows(): void {
   const rows = getRows();
@@ -97,6 +104,12 @@ fileInput.addEventListener('change', async () => {
 
 sampleButton.addEventListener('click', () => {
   void loadSample();
+});
+
+currencySelect.addEventListener('change', () => {
+  const code = currencySelect.value;
+  money = code === 'plain' ? plainMoney : makeMoney(code);
+  renderRows();
 });
 
 subscribe(renderRows);
