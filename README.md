@@ -2,13 +2,33 @@
 
 An AI agent can analyse your spreadsheet without ever receiving it.
 
-Airlock loads a CSV, parses it and computes over it **entirely inside the browser tab**, then exposes that computation to an AI agent as [WebMCP](https://developer.chrome.com/docs/ai/webmcp) tools. The agent asks questions and reads answers; the rows themselves never cross the network. Open your browser's network panel during a conversation and it stays empty.
+Airlock loads a CSV, parses it and computes over it **entirely inside the browser tab**, then exposes that computation to an AI agent as [WebMCP](https://developer.chrome.com/docs/ai/webmcp) tools. The agent asks questions and reads answers; the file itself never crosses the network. Open your browser's network panel during a conversation and it stays empty.
 
 Built for the [OpenAI WebMCP Challenge](https://webmcp.devpost.com/).
 
 ## Why WebMCP specifically
 
 A cloud model normally has to *receive* your data to analyse it, which is exactly what stops people pasting bank statements, lab results or payroll into a chatbot. WebMCP tools execute in page context, so the agent can invoke a calculation over local data and receive only the aggregate it asked for. That is not a faster version of something that already worked — without client-side tool execution it could not be done at all.
+
+## Where the privacy boundary actually is
+
+Two claims here are worth separating, because only one of them is about the network.
+
+**The file never leaves the tab.** It is read by the page, held in memory, and no request carries it anywhere. That is verifiable: open the network panel and watch it stay silent while the agent works.
+
+**What a tool *returns* is a second boundary.** Anything handed back to the agent reaches the model, and whoever hosts it. A tool that answers with rows has disclosed those rows, even though the file was never uploaded. So Airlock ships **privacy mode, on by default**:
+
+| | Privacy mode on (default) | Privacy mode off |
+|---|---|---|
+| `describe_dataset` | shape and totals; **file name withheld** | shape, totals and file name |
+| `sum_by_category`, `monthly_trend` | aggregates | identical — aggregates only either way |
+| `filter_rows` | match count and total | plus a bounded preview of matching rows |
+| `find_anomalies` | count and affected category names | plus each outlier's date, description, amount and z-score |
+| `top_expenses` | how many and their combined total | plus the rows themselves |
+
+With privacy mode on, the page still highlights every row a tool matched and scrolls to the first one, so the detail is on the human's screen rather than in the model's context. The switch is in the page, and **no tool can change it** — a consent gate the agent can open by itself is not a consent gate.
+
+Note that per-response caps bound one answer, not a conversation: an agent issuing many narrow `filter_rows` calls with privacy mode off could accumulate a large share of the dataset. That is the reason the safe setting is the default rather than an option.
 
 ## Requirements
 
@@ -38,17 +58,19 @@ node scripts/generate-sample.mjs    # regenerate the sample dataset from its see
 
 ## Registered tools
 
+Behaviour below is with privacy mode at its default (on); see the table above for what changes when it is switched off.
+
 | Tool | Reads or writes | What it does |
 |---|---|---|
-| `describe_dataset` | read-only | Row count, column names, category list, date range and total. Returns no rows. |
+| `describe_dataset` | read-only | Row count, column names, category list, date range and total. Returns no rows, and no file name. |
 | `sum_by_category` | read-only | Totals spending per category, largest first. Optionally highlights one category's rows in the table for the human. |
-| `filter_rows` | read-only | Matches rows by date range, category and amount bounds; highlights every match and returns a bounded preview. |
+| `filter_rows` | read-only | Matches rows by date range, category and amount bounds; highlights every match and returns how many matched and their total. |
 | `monthly_trend` | read-only | Totals per calendar month, oldest first, plus the first-to-last change. |
-| `find_anomalies` | read-only | Per-category z-score outliers, default threshold 2.5 (categories with fewer than three rows are skipped). Highlights every outlier and lists the strongest 25. |
-| `top_expenses` | read-only | Largest rows by amount, highlighted in the table. |
+| `find_anomalies` | read-only | Per-category z-score outliers, default threshold 2.5 (categories with fewer than three rows are skipped). Highlights every outlier and returns the count and affected categories. |
+| `top_expenses` | read-only | Finds the largest rows by amount, highlights them, and returns how many and their combined total. |
 | `clear_highlights` | writes | Removes highlighting so all rows are legible again. |
 
-Tools are registered in [`src/tools.ts`](src/tools.ts) through the thin wrapper in [`src/webmcp.ts`](src/webmcp.ts), which calls `document.modelContext.registerTool`.
+Tools are registered in [`src/tools.ts`](src/tools.ts) through the thin wrapper in [`src/webmcp.ts`](src/webmcp.ts), which calls `document.modelContext.registerTool`. Each handler is exported separately so the privacy gate is unit-tested directly in [`src/tools.test.ts`](src/tools.test.ts).
 
 ## Notes on the WebMCP API, verified empirically
 
@@ -69,7 +91,8 @@ public/sample-expenses.csv  seeded demo data, generated by scripts/generate-samp
 scripts/generate-sample.mjs regenerates the demo data deterministically from one seed
 src/data.ts                 CSV parsing, module-level store, aggregations
 src/data.test.ts            unit tests for the analysis functions
-src/tools.ts                WebMCP tool definitions
+src/tools.ts                WebMCP tool definitions and the privacy gate
+src/tools.test.ts           unit tests for what each tool does and does not return
 src/webmcp.ts               typed wrapper around document.modelContext
 src/main.ts                 rendering and wiring
 src/style.css               styles
