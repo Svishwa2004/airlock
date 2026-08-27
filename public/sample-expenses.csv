@@ -1,31 +1,966 @@
 date,description,category,amount
-2026-07-02,Neighbourhood supermarket,Groceries,8450.00
-2026-07-03,Mobile prepaid top-up,Utilities,1000.00
-2026-07-05,Ride to campus,Transport,620.50
-2026-07-06,Corner cafe,Dining,1850.00
-2026-07-08,Electricity bill,Utilities,7320.00
-2026-07-09,Neighbourhood supermarket,Groceries,5120.75
-2026-07-11,Textbook purchase,Education,3400.00
-2026-07-12,Ride home,Transport,540.00
-2026-07-14,Streaming service,Subscriptions,1590.00
-2026-07-15,Weekly market run,Groceries,6890.25
-2026-07-17,Music streaming,Subscriptions,790.00
-2026-07-18,Hostel rent,Housing,28000.00
-2026-07-20,Lunch with classmates,Dining,1240.00
-2026-07-21,Water bill,Utilities,2150.00
-2026-07-23,Bus pass top-up,Transport,1200.00
-2026-07-24,Neighbourhood supermarket,Groceries,7310.00
-2026-07-26,Lab coat and goggles,Education,4250.00
-2026-07-27,Takeaway dinner,Dining,2980.00
+2025-09-01,Monthly rent,Housing,28000.00
+2025-09-02,Bus pass top-up,Transport,408.61
+2025-09-02,Bulk dry goods,Groceries,6581.37
+2025-09-02,Neighbourhood supermarket,Groceries,8461.18
+2025-09-02,Cleaning supplies,Household,2383.91
+2025-09-02,Cinema ticket,Entertainment,1700.69
+2025-09-03,Three-wheeler fare,Transport,1268.51
+2025-09-03,Fuel top-up,Transport,937.07
+2025-09-03,Fuel top-up,Transport,1367.00
+2025-09-03,Fuel top-up,Transport,1115.20
+2025-09-03,Weekly market run,Groceries,7904.45
+2025-09-04,Home internet,Utilities,4500.00
+2025-09-04,Three-wheeler fare,Transport,1296.26
+2025-09-04,Bus pass top-up,Transport,418.58
+2025-09-04,Takeaway dinner,Dining,2206.04
+2025-09-04,Takeaway dinner,Dining,719.83
+2025-09-06,Cloud file storage,Subscriptions,450.00
+2025-09-06,Ride to campus,Transport,1038.47
+2025-09-06,Train ticket,Transport,1180.05
+2025-09-06,Tea and short eats,Dining,1372.42
+2025-09-06,Takeaway dinner,Dining,2822.84
+2025-09-06,Routine blood test,Healthcare,2570.46
+2025-09-07,Bulk dry goods,Groceries,3636.63
+2025-09-08,Electricity bill,Utilities,8126.39
+2025-09-08,Ride home,Transport,1116.04
+2025-09-08,Bus pass top-up,Transport,968.12
+2025-09-08,Fast food dinner,Dining,2776.44
+2025-09-08,Board game night,Entertainment,3296.32
+2025-09-09,Three-wheeler fare,Transport,1131.95
+2025-09-09,Tea and short eats,Dining,2844.74
+2025-09-09,Takeaway dinner,Dining,1636.91
+2025-09-09,Cinema ticket,Entertainment,1250.58
+2025-09-10,Tea and short eats,Dining,1241.54
+2025-09-11,Mobile prepaid top-up,Mobile,1392.66
+2025-09-11,Running shoes,Clothing,6303.65
+2025-09-12,Train ticket,Transport,592.29
+2025-09-12,Bakery run,Dining,2597.62
+2025-09-13,Ride to campus,Transport,1133.87
+2025-09-13,Bus pass top-up,Transport,676.11
+2025-09-13,Fast food dinner,Dining,1054.67
+2025-09-14,Video streaming service,Subscriptions,1590.00
+2025-09-14,Train ticket,Transport,591.10
+2025-09-14,Fuel top-up,Transport,402.01
+2025-09-14,Three-wheeler fare,Transport,1282.78
+2025-09-14,Neighbourhood supermarket,Groceries,3461.73
+2025-09-15,Ride to campus,Transport,810.09
+2025-09-15,Museum entry,Entertainment,2897.74
+2025-09-17,Music streaming service,Subscriptions,790.00
+2025-09-17,Three-wheeler fare,Transport,1079.49
+2025-09-17,Fast food dinner,Dining,1132.50
+2025-09-17,Vegetable stall,Groceries,6672.52
+2025-09-18,Ride home,Transport,601.01
+2025-09-18,Corner cafe,Dining,744.47
+2025-09-18,Weekly market run,Groceries,6594.42
+2025-09-18,Cleaning supplies,Household,4311.85
+2025-09-18,Pharmacy visit,Healthcare,2697.62
+2025-09-18,Routine blood test,Healthcare,1305.93
+2025-09-19,Fuel top-up,Transport,479.19
+2025-09-19,Fuel top-up,Transport,1397.83
+2025-09-19,Textbook purchase,Education,2108.64
+2025-09-21,Water bill,Utilities,1885.59
+2025-09-21,Bakery run,Dining,1105.19
+2025-09-22,Fuel top-up,Transport,403.20
+2025-09-22,Tea and short eats,Dining,1912.69
+2025-09-22,Lab consumables,Education,3801.35
+2025-09-23,Data add-on,Mobile,1528.10
+2025-09-24,Ride home,Transport,1126.18
+2025-09-25,Vegetable stall,Groceries,5225.22
+2025-09-25,Kitchen refill,Household,4136.24
+2025-09-26,Fast food dinner,Dining,733.17
+2025-09-26,Concert ticket,Entertainment,3157.26
+2025-09-27,Three-wheeler fare,Transport,1390.60
+2025-09-28,Takeaway dinner,Dining,859.30
+2025-09-29,Code assistant subscription,Subscriptions,3100.00
+2025-09-29,Tea and short eats,Dining,2692.60
+2025-09-29,Board game night,Entertainment,649.28
+2025-09-30,Tea and short eats,Dining,2329.61
+2025-10-01,Monthly rent,Housing,28000.00
+2025-10-01,Ride home,Transport,1429.58
+2025-10-01,Bakery run,Dining,2364.49
+2025-10-01,Printing and binding,Education,1172.74
+2025-10-02,Takeaway dinner,Dining,3121.63
+2025-10-02,Bulk dry goods,Groceries,7728.85
+2025-10-02,Online course fee,Education,1094.53
+2025-10-03,Lunch with classmates,Dining,721.24
+2025-10-03,Corner cafe,Dining,2168.76
+2025-10-04,Home internet,Utilities,4500.00
+2025-10-04,Concert ticket,Entertainment,2298.36
+2025-10-05,Lab consumables,Education,5364.83
+2025-10-06,Cloud file storage,Subscriptions,450.00
+2025-10-07,Ride to campus,Transport,509.36
+2025-10-08,Electricity bill,Utilities,5902.67
+2025-10-09,Fuel top-up,Transport,1194.17
+2025-10-09,Ride to campus,Transport,1072.31
+2025-10-09,Vegetable stall,Groceries,3490.57
+2025-10-10,Three-wheeler fare,Transport,1301.29
+2025-10-10,Fast food dinner,Dining,1887.44
+2025-10-10,Cleaning supplies,Household,860.44
+2025-10-10,Laundry service,Household,1397.49
+2025-10-11,Three-wheeler fare,Transport,992.67
+2025-10-11,Fuel top-up,Transport,1442.76
+2025-10-11,Bulk dry goods,Groceries,7044.03
+2025-10-11,Laundry service,Household,1935.61
+2025-10-11,Concert ticket,Entertainment,2088.66
+2025-10-12,Bus pass top-up,Transport,432.70
+2025-10-12,Ride to campus,Transport,1193.75
+2025-10-12,Corner cafe,Dining,2259.43
+2025-10-13,Bus pass top-up,Transport,894.22
+2025-10-13,Bus pass top-up,Transport,895.88
+2025-10-13,Bakery run,Dining,3012.11
+2025-10-13,Lunch with classmates,Dining,775.58
+2025-10-14,Video streaming service,Subscriptions,1590.00
+2025-10-14,Ride to campus,Transport,1144.85
+2025-10-14,Lunch with classmates,Dining,1147.01
+2025-10-14,Bakery run,Dining,3134.81
+2025-10-14,Cinema ticket,Entertainment,3091.63
+2025-10-15,Ride to campus,Transport,963.12
+2025-10-15,Bakery run,Dining,1625.49
+2025-10-15,Mobile prepaid top-up,Mobile,1219.38
+2025-10-16,Ride to campus,Transport,680.18
+2025-10-16,Ride home,Transport,1198.09
+2025-10-16,Kitchen refill,Household,4001.62
+2025-10-17,Music streaming service,Subscriptions,790.00
+2025-10-17,Lunch with classmates,Dining,2680.48
+2025-10-18,Bus pass top-up,Transport,480.47
+2025-10-18,Fuel top-up,Transport,570.10
+2025-10-18,Tea and short eats,Dining,638.67
+2025-10-18,Kitchen refill,Household,1837.32
+2025-10-19,Ride to campus,Transport,943.87
+2025-10-19,Bus pass top-up,Transport,891.48
+2025-10-19,Mobile prepaid top-up,Mobile,1465.96
+2025-10-20,Three-wheeler fare,Transport,381.85
+2025-10-20,Weekly market run,Groceries,4407.07
+2025-10-20,Board game night,Entertainment,2645.58
+2025-10-20,Online course fee,Education,944.69
+2025-10-21,Water bill,Utilities,2253.33
+2025-10-22,Fuel top-up,Transport,916.63
+2025-10-22,Takeaway dinner,Dining,926.53
+2025-10-23,Train ticket,Transport,726.94
+2025-10-23,Train ticket,Transport,1248.91
+2025-10-23,Lunch with classmates,Dining,2540.21
+2025-10-23,Bulk dry goods,Groceries,5493.16
+2025-10-24,Fast food dinner,Dining,1033.74
+2025-10-24,Board game night,Entertainment,1742.90
+2025-10-25,Fuel top-up,Transport,1307.06
+2025-10-25,Three-wheeler fare,Transport,1358.27
+2025-10-25,Routine blood test,Healthcare,2835.17
+2025-10-26,Train ticket,Transport,930.70
+2025-10-26,Fast food dinner,Dining,2966.83
+2025-10-27,Bakery run,Dining,966.48
+2025-10-28,Ride home,Transport,997.21
+2025-10-28,Bulk dry goods,Groceries,4754.61
+2025-10-28,Data add-on,Mobile,1654.78
+2025-10-29,Code assistant subscription,Subscriptions,3100.00
+2025-10-29,Ride home,Transport,1100.52
+2025-10-30,Train ticket,Transport,1118.84
+2025-10-31,Three-wheeler fare,Transport,967.55
+2025-10-31,Three-wheeler fare,Transport,1250.78
+2025-10-31,Bus pass top-up,Transport,873.84
+2025-10-31,Ride home,Transport,418.24
+2025-10-31,Bakery run,Dining,943.02
+2025-11-01,Monthly rent,Housing,28000.00
+2025-11-01,Bus pass top-up,Transport,585.42
+2025-11-01,Bulk dry goods,Groceries,4146.78
+2025-11-01,Museum entry,Entertainment,2835.64
+2025-11-02,Ride to campus,Transport,389.89
+2025-11-02,Bus pass top-up,Transport,619.56
+2025-11-02,Corner cafe,Dining,920.30
+2025-11-03,Train ticket,Transport,399.42
+2025-11-03,Fuel top-up,Transport,838.71
+2025-11-03,Fuel top-up,Transport,948.30
+2025-11-03,Bakery run,Dining,1139.39
+2025-11-04,Home internet,Utilities,4500.00
+2025-11-04,Three-wheeler fare,Transport,1322.30
+2025-11-04,Train ticket,Transport,520.29
+2025-11-05,Fast food dinner,Dining,2086.22
+2025-11-05,Bulk dry goods,Groceries,3437.20
+2025-11-05,Online course fee,Education,4160.09
+2025-11-05,Rain jacket,Clothing,5544.86
+2025-11-06,Cloud file storage,Subscriptions,450.00
+2025-11-06,Three-wheeler fare,Transport,739.00
+2025-11-06,Ride to campus,Transport,869.13
+2025-11-06,Ride to campus,Transport,1179.12
+2025-11-06,Bus pass top-up,Transport,1147.26
+2025-11-06,Ride home,Transport,1368.85
+2025-11-07,Bakery run,Dining,1214.53
+2025-11-08,Electricity bill,Utilities,7546.90
+2025-11-08,Bus pass top-up,Transport,357.78
+2025-11-08,Lunch with classmates,Dining,1899.74
+2025-11-10,Bus pass top-up,Transport,943.14
+2025-11-10,Train ticket,Transport,780.83
+2025-11-11,Fast food dinner,Dining,620.65
+2025-11-11,Laundry service,Household,2390.83
+2025-11-11,Mobile prepaid top-up,Mobile,1436.23
+2025-11-11,Running shoes,Clothing,2970.48
+2025-11-12,Ride to campus,Transport,444.42
+2025-11-12,Lunch with classmates,Dining,2768.37
+2025-11-13,Takeaway dinner,Dining,1838.89
+2025-11-13,Kitchen refill,Household,2250.70
+2025-11-13,Running shoes,Clothing,8125.43
+2025-11-14,Video streaming service,Subscriptions,1590.00
+2025-11-14,Printing and binding,Education,4620.27
+2025-11-15,Train ticket,Transport,453.02
+2025-11-16,Ride home,Transport,689.50
+2025-11-16,Bakery run,Dining,2058.51
+2025-11-16,Tea and short eats,Dining,745.41
+2025-11-16,Bulk dry goods,Groceries,3770.94
+2025-11-16,Light bulbs and batteries,Household,3507.49
+2025-11-17,Music streaming service,Subscriptions,790.00
+2025-11-17,Weekly market run,Groceries,4378.79
+2025-11-17,Vegetable stall,Groceries,5828.48
+2025-11-17,Textbook purchase,Education,2699.98
+2025-11-17,Pharmacy visit,Healthcare,3231.16
+2025-11-17,Clinic consultation,Healthcare,4510.54
+2025-11-19,Fuel top-up,Transport,846.43
+2025-11-19,Train ticket,Transport,661.92
+2025-11-20,Train ticket,Transport,664.90
+2025-11-20,Lunch with classmates,Dining,866.69
+2025-11-20,Takeaway dinner,Dining,1467.22
+2025-11-20,Museum entry,Entertainment,3174.04
+2025-11-21,Water bill,Utilities,2150.17
+2025-11-22,Fuel top-up,Transport,650.96
+2025-11-22,Cinema ticket,Entertainment,3291.60
+2025-11-23,Lunch with classmates,Dining,1079.99
+2025-11-24,Lunch with classmates,Dining,1758.91
+2025-11-25,Fast food dinner,Dining,1558.89
+2025-11-25,Weekly market run,Groceries,7718.12
+2025-11-25,Kitchen refill,Household,4564.44
+2025-11-26,Ride home,Transport,425.15
+2025-11-26,Fuel top-up,Transport,1241.97
+2025-11-26,Train ticket,Transport,965.50
+2025-11-26,Fuel top-up,Transport,526.21
+2025-11-26,Tea and short eats,Dining,1197.10
+2025-11-27,Takeaway dinner,Dining,2099.73
+2025-11-27,Data add-on,Mobile,1597.68
+2025-11-28,Ride to campus,Transport,1365.50
+2025-11-29,Code assistant subscription,Subscriptions,3100.00
+2025-11-29,Ride to campus,Transport,512.68
+2025-11-29,Bus pass top-up,Transport,1397.40
+2025-11-29,Cleaning supplies,Household,2059.39
+2025-11-29,Museum entry,Entertainment,3539.91
+2025-11-30,Neighbourhood supermarket,Groceries,8354.27
+2025-12-01,Monthly rent,Housing,28000.00
+2025-12-01,Train ticket,Transport,700.90
+2025-12-01,Takeaway dinner,Dining,916.96
+2025-12-01,Cinema ticket,Entertainment,3048.88
+2025-12-02,Fuel top-up,Transport,1106.94
+2025-12-02,Tea and short eats,Dining,2416.91
+2025-12-02,Neighbourhood supermarket,Groceries,8712.09
+2025-12-03,Fuel top-up,Transport,445.66
+2025-12-03,Light bulbs and batteries,Household,2849.60
+2025-12-04,Home internet,Utilities,4500.00
+2025-12-04,Fuel top-up,Transport,558.53
+2025-12-04,Neighbourhood supermarket,Groceries,3635.50
+2025-12-05,Train ticket,Transport,927.77
+2025-12-05,Ride to campus,Transport,1332.56
+2025-12-05,Bulk dry goods,Groceries,4615.52
+2025-12-06,Cloud file storage,Subscriptions,450.00
+2025-12-07,Lunch with classmates,Dining,1482.25
+2025-12-07,Online course fee,Education,4956.39
+2025-12-08,Electricity bill,Utilities,6620.90
+2025-12-08,Ride to campus,Transport,788.98
+2025-12-08,Ride to campus,Transport,1297.32
+2025-12-08,Cinema ticket,Entertainment,678.06
+2025-12-09,Train ticket,Transport,1186.07
+2025-12-09,Corner cafe,Dining,1676.11
+2025-12-10,Bakery run,Dining,1738.01
+2025-12-10,Printing and binding,Education,3610.40
+2025-12-11,Ride home,Transport,820.67
+2025-12-11,Ride home,Transport,1251.44
+2025-12-11,Train ticket,Transport,1006.38
+2025-12-11,Ride to campus,Transport,571.07
+2025-12-11,Bus pass top-up,Transport,353.71
+2025-12-11,Vegetable stall,Groceries,4227.28
+2025-12-12,Tea and short eats,Dining,2668.98
+2025-12-12,Online course fee,Education,4665.49
+2025-12-13,Train ticket,Transport,1359.59
+2025-12-13,Ride to campus,Transport,546.32
+2025-12-13,Bus pass top-up,Transport,1026.24
+2025-12-14,Video streaming service,Subscriptions,1590.00
+2025-12-14,Ride home,Transport,1088.47
+2025-12-14,Cleaning supplies,Household,3867.76
+2025-12-15,Bus pass top-up,Transport,768.34
+2025-12-15,Three-wheeler fare,Transport,1322.33
+2025-12-16,Ride home,Transport,340.66
+2025-12-16,Fast food dinner,Dining,782.38
+2025-12-16,Vegetable stall,Groceries,8163.06
+2025-12-16,Museum entry,Entertainment,2684.78
+2025-12-17,Music streaming service,Subscriptions,790.00
+2025-12-17,Three-wheeler fare,Transport,897.79
+2025-12-18,Ride home,Transport,836.52
+2025-12-18,Bakery run,Dining,2836.24
+2025-12-19,Three-wheeler fare,Transport,393.23
+2025-12-19,Bakery run,Dining,2857.17
+2025-12-20,Ride home,Transport,1048.82
+2025-12-20,Data add-on,Mobile,1341.98
+2025-12-21,Water bill,Utilities,2353.99
+2025-12-21,Train ticket,Transport,714.46
+2025-12-22,Ride home,Transport,892.12
+2025-12-22,Ride to campus,Transport,1207.29
+2025-12-22,Vegetable stall,Groceries,7470.23
+2025-12-23,Train ticket,Transport,992.82
+2025-12-23,Weekly market run,Groceries,3777.41
+2025-12-24,Train ticket,Transport,1403.89
+2025-12-24,Weekly market run,Groceries,5570.14
+2025-12-25,Fast food dinner,Dining,2139.04
+2025-12-25,Board game night,Entertainment,1796.27
+2025-12-26,Fast food dinner,Dining,2292.75
+2025-12-27,Fuel top-up,Transport,1365.09
+2025-12-27,Bakery run,Dining,1943.42
+2025-12-28,Everyday shirt,Clothing,6784.46
+2025-12-29,Code assistant subscription,Subscriptions,3100.00
+2025-12-29,Three-wheeler fare,Transport,370.25
+2025-12-29,Corner cafe,Dining,2303.53
+2025-12-29,Kitchen refill,Household,1488.10
+2025-12-30,Bus pass top-up,Transport,560.23
+2025-12-30,Train ticket,Transport,687.68
+2025-12-30,Fast food dinner,Dining,2178.70
+2025-12-30,Bakery run,Dining,793.93
+2025-12-31,Vegetable stall,Groceries,5702.17
+2025-12-31,Mobile prepaid top-up,Mobile,1934.08
+2026-01-01,Monthly rent,Housing,28000.00
+2026-01-01,Ride home,Transport,701.91
+2026-01-01,Vegetable stall,Groceries,8321.51
+2026-01-01,Neighbourhood supermarket,Groceries,4827.02
+2026-01-02,Train ticket,Transport,819.50
+2026-01-02,Ride home,Transport,435.93
+2026-01-02,Weekly market run,Groceries,8769.56
+2026-01-02,Laundry service,Household,3041.97
+2026-01-03,Bus pass top-up,Transport,674.00
+2026-01-03,Weekly market run,Groceries,5845.63
+2026-01-04,Home internet,Utilities,4500.00
+2026-01-04,Bus pass top-up,Transport,935.31
+2026-01-04,Train ticket,Transport,604.49
+2026-01-05,Bus pass top-up,Transport,557.40
+2026-01-05,Fuel top-up,Transport,1429.48
+2026-01-05,Corner cafe,Dining,2844.71
+2026-01-06,Cloud file storage,Subscriptions,450.00
+2026-01-06,Takeaway dinner,Dining,2620.32
+2026-01-07,Three-wheeler fare,Transport,425.63
+2026-01-07,Ride to campus,Transport,1247.87
+2026-01-08,Electricity bill,Utilities,5348.65
+2026-01-08,Bus pass top-up,Transport,1009.17
+2026-01-09,Train ticket,Transport,1139.89
+2026-01-09,Fast food dinner,Dining,655.00
+2026-01-09,Bakery run,Dining,1537.97
+2026-01-10,Three-wheeler fare,Transport,1217.10
+2026-01-10,Mobile prepaid top-up,Mobile,1277.53
+2026-01-11,Bus pass top-up,Transport,916.59
+2026-01-13,Bakery run,Dining,866.14
+2026-01-13,Fast food dinner,Dining,1894.80
+2026-01-13,Neighbourhood supermarket,Groceries,8758.16
+2026-01-13,Stationery haul,Education,3851.90
+2026-01-14,Video streaming service,Subscriptions,1590.00
+2026-01-14,Train ticket,Transport,1086.50
+2026-01-14,Corner cafe,Dining,1555.60
+2026-01-14,Mobile prepaid top-up,Mobile,1006.20
+2026-01-15,Fuel top-up,Transport,726.55
+2026-01-15,Tea and short eats,Dining,1953.69
+2026-01-16,Three-wheeler fare,Transport,573.78
+2026-01-17,Music streaming service,Subscriptions,790.00
+2026-01-17,Fuel top-up,Transport,689.82
+2026-01-17,Ride home,Transport,981.56
+2026-01-17,Takeaway dinner,Dining,2941.49
+2026-01-18,Three-wheeler fare,Transport,473.68
+2026-01-19,Three-wheeler fare,Transport,935.23
+2026-01-19,Bus pass top-up,Transport,659.22
+2026-01-19,Cleaning supplies,Household,1780.09
+2026-01-20,Train ticket,Transport,914.99
+2026-01-20,Train ticket,Transport,570.59
+2026-01-21,Water bill,Utilities,2011.73
+2026-01-21,Train ticket,Transport,580.54
+2026-01-21,Ride to campus,Transport,584.33
+2026-01-21,Textbook purchase,Education,4299.98
+2026-01-22,Three-wheeler fare,Transport,1108.82
+2026-01-22,Bus pass top-up,Transport,678.64
+2026-01-22,Pharmacy visit,Healthcare,3831.88
+2026-01-23,Bus pass top-up,Transport,1157.25
+2026-01-23,Bus pass top-up,Transport,390.01
+2026-01-24,Ride home,Transport,1139.52
+2026-01-24,Corner cafe,Dining,2610.00
+2026-01-24,Takeaway dinner,Dining,1282.05
+2026-01-24,Lunch with classmates,Dining,2500.66
+2026-01-24,Cinema ticket,Entertainment,2327.05
+2026-01-25,Fuel top-up,Transport,1168.17
+2026-01-25,Textbook purchase,Education,911.54
+2026-01-26,Lunch with classmates,Dining,2187.35
+2026-01-27,Fast food dinner,Dining,1929.52
+2026-01-27,Tea and short eats,Dining,2032.97
+2026-01-27,Vegetable stall,Groceries,6013.96
+2026-01-27,Light bulbs and batteries,Household,1667.50
+2026-01-27,Museum entry,Entertainment,1896.44
+2026-01-27,Mobile prepaid top-up,Mobile,1441.33
+2026-01-28,Bakery run,Dining,2165.94
+2026-01-28,Board game night,Entertainment,1282.69
+2026-01-29,Code assistant subscription,Subscriptions,3100.00
+2026-01-29,Train ticket,Transport,377.92
+2026-01-29,Fast food dinner,Dining,712.49
+2026-01-30,Weekly market run,Groceries,6262.63
+2026-01-31,Ride to campus,Transport,592.16
+2026-01-31,Corner cafe,Dining,2399.73
+2026-01-31,Kitchen refill,Household,3597.82
+2026-02-01,Monthly rent,Housing,28000.00
+2026-02-01,Train ticket,Transport,1137.76
+2026-02-01,Neighbourhood supermarket,Groceries,4911.02
+2026-02-02,Bakery run,Dining,934.21
+2026-02-02,Museum entry,Entertainment,3075.45
+2026-02-03,Three-wheeler fare,Transport,486.50
+2026-02-03,Fuel top-up,Transport,623.30
+2026-02-04,Home internet,Utilities,4500.00
+2026-02-04,Ride home,Transport,847.07
+2026-02-04,Ride home,Transport,997.82
+2026-02-05,Bus pass top-up,Transport,1435.60
+2026-02-05,Corner cafe,Dining,2680.02
+2026-02-05,Bakery run,Dining,1078.91
+2026-02-05,Data add-on,Mobile,1795.34
+2026-02-06,Cloud file storage,Subscriptions,450.00
+2026-02-07,Ride to campus,Transport,644.62
+2026-02-07,Takeaway dinner,Dining,2276.76
+2026-02-07,Neighbourhood supermarket,Groceries,5202.99
+2026-02-08,Electricity bill,Utilities,6408.39
+2026-02-08,Train ticket,Transport,1189.82
+2026-02-08,Bus pass top-up,Transport,658.55
+2026-02-08,Bus pass top-up,Transport,1018.65
+2026-02-09,Fuel top-up,Transport,1414.54
+2026-02-09,Bakery run,Dining,3125.24
+2026-02-09,Bulk dry goods,Groceries,4293.69
+2026-02-09,Vegetable stall,Groceries,4542.70
+2026-02-09,Refrigerator replacement,Household,68000.00
+2026-02-10,Fuel top-up,Transport,1170.59
+2026-02-10,Fuel top-up,Transport,863.38
+2026-02-10,Fast food dinner,Dining,1969.79
+2026-02-10,Takeaway dinner,Dining,885.23
+2026-02-11,Bulk dry goods,Groceries,6896.55
+2026-02-12,Takeaway dinner,Dining,1045.69
+2026-02-12,Routine blood test,Healthcare,1144.00
+2026-02-13,Ride home,Transport,1365.28
+2026-02-13,Bus pass top-up,Transport,546.80
+2026-02-13,Tea and short eats,Dining,1663.54
+2026-02-13,Vegetable stall,Groceries,4644.35
+2026-02-13,Stationery haul,Education,4800.26
+2026-02-14,Video streaming service,Subscriptions,1590.00
+2026-02-14,Three-wheeler fare,Transport,789.91
+2026-02-15,Three-wheeler fare,Transport,1312.71
+2026-02-15,Cleaning supplies,Household,3624.78
+2026-02-15,Museum entry,Entertainment,2389.06
+2026-02-15,Online course fee,Education,2714.13
+2026-02-16,Kitchen refill,Household,3503.67
+2026-02-17,Music streaming service,Subscriptions,790.00
+2026-02-17,Fuel top-up,Transport,668.07
+2026-02-17,Bakery run,Dining,1118.81
+2026-02-17,Vegetable stall,Groceries,6074.87
+2026-02-17,Mobile prepaid top-up,Mobile,1310.32
+2026-02-18,Ride to campus,Transport,1309.08
+2026-02-18,Ride home,Transport,1212.74
+2026-02-18,Train ticket,Transport,679.16
+2026-02-18,Lunch with classmates,Dining,920.53
+2026-02-18,Tea and short eats,Dining,1033.67
+2026-02-18,Neighbourhood supermarket,Groceries,9212.68
+2026-02-18,Data add-on,Mobile,1922.97
+2026-02-19,Ride to campus,Transport,880.81
+2026-02-19,Light bulbs and batteries,Household,903.69
+2026-02-20,Corner cafe,Dining,1470.19
+2026-02-20,Fast food dinner,Dining,713.79
+2026-02-21,Water bill,Utilities,2204.53
+2026-02-21,Ride home,Transport,667.51
+2026-02-21,Fast food dinner,Dining,2148.25
+2026-02-21,Fast food dinner,Dining,2708.06
+2026-02-22,Vegetable stall,Groceries,3631.38
+2026-02-23,Ride to campus,Transport,1259.19
+2026-02-23,Fast food dinner,Dining,1010.79
+2026-02-24,Corner cafe,Dining,2191.59
+2026-02-24,Bakery run,Dining,1066.36
+2026-02-26,Three-wheeler fare,Transport,646.42
+2026-02-26,Bakery run,Dining,1394.46
+2026-02-27,Ride to campus,Transport,722.43
+2026-02-27,Ride home,Transport,921.96
+2026-02-27,Ride home,Transport,905.31
+2026-02-27,Fuel top-up,Transport,617.93
+2026-02-27,Fast food dinner,Dining,2579.86
+2026-02-27,Cleaning supplies,Household,2656.69
+2026-02-28,Code assistant subscription,Subscriptions,3100.00
+2026-02-28,Fuel top-up,Transport,713.38
+2026-02-28,Takeaway dinner,Dining,885.80
+2026-03-01,Monthly rent,Housing,28000.00
+2026-03-01,Vegetable stall,Groceries,4169.01
+2026-03-01,Concert ticket,Entertainment,979.65
+2026-03-02,Tea and short eats,Dining,1955.35
+2026-03-02,Data add-on,Mobile,1285.12
+2026-03-03,Fuel top-up,Transport,435.31
+2026-03-03,Ride home,Transport,1304.11
+2026-03-03,Ride home,Transport,1411.02
+2026-03-03,Vegetable stall,Groceries,8852.66
+2026-03-04,Home internet,Utilities,4500.00
+2026-03-04,Corner cafe,Dining,707.31
+2026-03-04,Corner cafe,Dining,925.54
+2026-03-04,Museum entry,Entertainment,2804.50
+2026-03-04,Cinema ticket,Entertainment,2837.36
+2026-03-05,Fuel top-up,Transport,1185.95
+2026-03-05,Train ticket,Transport,1449.27
+2026-03-05,Ride home,Transport,945.79
+2026-03-05,Lunch with classmates,Dining,2943.74
+2026-03-06,Cloud file storage,Subscriptions,450.00
+2026-03-06,Ride home,Transport,1163.87
+2026-03-06,Running shoes,Clothing,1978.82
+2026-03-07,Fuel top-up,Transport,657.94
+2026-03-07,Three-wheeler fare,Transport,1189.54
+2026-03-07,Ride home,Transport,520.42
+2026-03-07,Train ticket,Transport,623.36
+2026-03-08,Electricity bill,Utilities,7020.51
+2026-03-09,Kitchen refill,Household,3728.25
+2026-03-09,Cinema ticket,Entertainment,1087.84
+2026-03-09,Stationery haul,Education,4819.81
+2026-03-09,Mobile prepaid top-up,Mobile,1510.45
+2026-03-10,Weekly market run,Groceries,5331.40
+2026-03-10,Vegetable stall,Groceries,8048.52
+2026-03-11,Ride to campus,Transport,1017.41
+2026-03-11,Printing and binding,Education,2253.13
+2026-03-13,Takeaway dinner,Dining,1205.74
+2026-03-14,Video streaming service,Subscriptions,1590.00
+2026-03-14,Bus pass top-up,Transport,745.55
+2026-03-14,Bus pass top-up,Transport,1366.20
+2026-03-14,Bakery run,Dining,2111.82
+2026-03-14,Clinic consultation,Healthcare,3242.38
+2026-03-15,Train ticket,Transport,1177.03
+2026-03-16,Bus pass top-up,Transport,560.98
+2026-03-17,Music streaming service,Subscriptions,790.00
+2026-03-17,Tea and short eats,Dining,815.03
+2026-03-17,Vegetable stall,Groceries,5463.85
+2026-03-17,Routine blood test,Healthcare,3291.94
+2026-03-18,Clinic consultation,Healthcare,1906.69
+2026-03-19,Fuel top-up,Transport,360.55
+2026-03-21,Water bill,Utilities,2009.52
+2026-03-21,Ride home,Transport,1373.14
+2026-03-22,Ride to campus,Transport,501.77
+2026-03-22,Takeaway dinner,Dining,2256.45
+2026-03-22,Cleaning supplies,Household,2808.67
+2026-03-22,Concert ticket,Entertainment,1109.26
+2026-03-23,Bus pass top-up,Transport,983.40
+2026-03-23,Takeaway dinner,Dining,1139.43
+2026-03-23,Fast food dinner,Dining,2565.70
+2026-03-23,Textbook purchase,Education,1305.33
+2026-03-24,Ride to campus,Transport,350.61
+2026-03-24,Data add-on,Mobile,1056.64
+2026-03-25,Bus pass top-up,Transport,1283.16
+2026-03-25,Ride to campus,Transport,359.16
+2026-03-25,Lunch with classmates,Dining,2427.80
+2026-03-25,Lunch with classmates,Dining,2708.34
+2026-03-25,Weekly market run,Groceries,6241.38
+2026-03-25,Museum entry,Entertainment,3333.16
+2026-03-26,Kitchen refill,Household,805.11
+2026-03-26,Stationery haul,Education,1757.23
+2026-03-27,Fuel top-up,Transport,941.47
+2026-03-27,Lunch with classmates,Dining,3152.87
+2026-03-28,Ride to campus,Transport,899.21
+2026-03-28,Lunch with classmates,Dining,1351.33
+2026-03-28,Corner cafe,Dining,1467.76
+2026-03-29,Code assistant subscription,Subscriptions,3100.00
+2026-03-30,Corner cafe,Dining,2083.70
+2026-03-30,Cleaning supplies,Household,2772.92
+2026-03-30,Light bulbs and batteries,Household,1173.53
+2026-03-31,Fuel top-up,Transport,546.15
+2026-03-31,Train ticket,Transport,1434.56
+2026-03-31,Three-wheeler fare,Transport,1440.25
+2026-04-01,Monthly rent,Housing,28000.00
+2026-04-01,Corner cafe,Dining,2872.06
+2026-04-01,Bulk dry goods,Groceries,7098.42
+2026-04-01,Museum entry,Entertainment,1180.98
+2026-04-01,Data add-on,Mobile,1486.62
+2026-04-02,Ride to campus,Transport,1419.38
+2026-04-02,Three-wheeler fare,Transport,878.21
+2026-04-02,Fast food dinner,Dining,2573.73
+2026-04-03,Ride to campus,Transport,1174.86
+2026-04-03,Bulk dry goods,Groceries,7730.24
+2026-04-04,Home internet,Utilities,4500.00
+2026-04-04,Fuel top-up,Transport,450.03
+2026-04-04,Bakery run,Dining,1535.87
+2026-04-04,Kitchen refill,Household,1346.12
+2026-04-04,Stationery haul,Education,2711.03
+2026-04-05,Corner cafe,Dining,889.88
+2026-04-05,Online course fee,Education,3611.12
+2026-04-06,Cloud file storage,Subscriptions,450.00
+2026-04-06,Ride home,Transport,996.20
+2026-04-07,Lunch with classmates,Dining,1676.72
+2026-04-08,Electricity bill,Utilities,5553.21
+2026-04-08,Laundry service,Household,4405.38
+2026-04-09,Train ticket,Transport,376.56
+2026-04-09,Three-wheeler fare,Transport,692.36
+2026-04-09,Everyday shirt,Clothing,2008.94
+2026-04-10,Fuel top-up,Transport,522.09
+2026-04-10,Corner cafe,Dining,1898.95
+2026-04-10,Bulk dry goods,Groceries,8026.71
+2026-04-10,Data add-on,Mobile,1798.35
+2026-04-11,Ride home,Transport,1379.66
+2026-04-11,Takeaway dinner,Dining,999.03
+2026-04-11,Lunch with classmates,Dining,3000.83
+2026-04-12,Fast food dinner,Dining,598.55
+2026-04-12,Printing and binding,Education,1840.39
+2026-04-13,Running shoes,Clothing,2957.45
+2026-04-14,Video streaming service,Subscriptions,1590.00
+2026-04-15,Fuel top-up,Transport,763.81
+2026-04-15,Ride home,Transport,1422.61
+2026-04-15,Lunch with classmates,Dining,894.93
+2026-04-15,Tea and short eats,Dining,679.02
+2026-04-15,Tea and short eats,Dining,3171.59
+2026-04-16,Ride home,Transport,993.64
+2026-04-17,Music streaming service,Subscriptions,790.00
+2026-04-17,Bulk dry goods,Groceries,4366.28
+2026-04-18,Lunch with classmates,Dining,2924.55
+2026-04-18,Takeaway dinner,Dining,3125.93
+2026-04-19,Train ticket,Transport,489.03
+2026-04-19,Weekly market run,Groceries,3503.67
+2026-04-19,Board game night,Entertainment,1677.67
+2026-04-21,Water bill,Utilities,1902.37
+2026-04-22,Three-wheeler fare,Transport,1056.28
+2026-04-22,Three-wheeler fare,Transport,434.66
+2026-04-22,Ride home,Transport,1069.70
+2026-04-23,Ride to campus,Transport,1124.19
+2026-04-23,Train ticket,Transport,467.83
+2026-04-23,Bakery run,Dining,2042.91
+2026-04-23,Bulk dry goods,Groceries,4157.72
+2026-04-24,Bakery run,Dining,3177.99
+2026-04-25,Train ticket,Transport,589.89
+2026-04-25,Bus pass top-up,Transport,1099.61
+2026-04-26,Weekly market run,Groceries,6006.12
+2026-04-27,Train ticket,Transport,390.23
+2026-04-27,Fuel top-up,Transport,1023.59
+2026-04-27,Board game night,Entertainment,2137.38
+2026-04-27,Mobile prepaid top-up,Mobile,1651.51
+2026-04-28,Ride home,Transport,613.80
+2026-04-28,Fast food dinner,Dining,2678.90
+2026-04-29,Code assistant subscription,Subscriptions,3100.00
+2026-04-29,Train ticket,Transport,694.03
+2026-04-30,Three-wheeler fare,Transport,1332.15
+2026-04-30,Bus pass top-up,Transport,1072.54
+2026-04-30,Neighbourhood supermarket,Groceries,4204.30
+2026-05-01,Monthly rent,Housing,28000.00
+2026-05-01,Tea and short eats,Dining,1303.44
+2026-05-01,Stationery haul,Education,4354.58
+2026-05-02,Bakery run,Dining,1877.59
+2026-05-02,Lab consumables,Education,1573.37
+2026-05-03,Train ticket,Transport,695.95
+2026-05-03,Bus pass top-up,Transport,1340.23
+2026-05-03,Ride to campus,Transport,558.04
+2026-05-03,Takeaway dinner,Dining,2488.68
+2026-05-03,Neighbourhood supermarket,Groceries,5870.58
+2026-05-04,Home internet,Utilities,4500.00
+2026-05-04,Train ticket,Transport,691.53
+2026-05-05,Takeaway dinner,Dining,2253.60
+2026-05-06,Cloud file storage,Subscriptions,450.00
+2026-05-06,Three-wheeler fare,Transport,505.45
+2026-05-06,Corner cafe,Dining,1864.02
+2026-05-06,Laundry service,Household,2737.96
+2026-05-06,Cinema ticket,Entertainment,1926.43
+2026-05-07,Bakery run,Dining,1737.15
+2026-05-08,Electricity bill,Utilities,6989.05
+2026-05-08,Three-wheeler fare,Transport,1150.06
+2026-05-08,Cinema ticket,Entertainment,2805.20
+2026-05-09,Ride to campus,Transport,945.71
+2026-05-09,Fuel top-up,Transport,525.69
+2026-05-09,Tea and short eats,Dining,1284.69
+2026-05-09,Light bulbs and batteries,Household,1836.00
+2026-05-10,Ride home,Transport,505.02
+2026-05-10,Three-wheeler fare,Transport,640.19
+2026-05-10,Three-wheeler fare,Transport,521.71
+2026-05-11,Fast food dinner,Dining,1472.97
+2026-05-11,Bulk dry goods,Groceries,6795.38
+2026-05-11,Textbook purchase,Education,3490.50
+2026-05-12,Corner cafe,Dining,1694.51
+2026-05-12,Fast food dinner,Dining,1249.21
+2026-05-12,Vegetable stall,Groceries,5111.37
+2026-05-13,Three-wheeler fare,Transport,1443.45
+2026-05-13,Corner cafe,Dining,2772.26
+2026-05-13,Takeaway dinner,Dining,1047.38
+2026-05-14,Video streaming service,Subscriptions,1590.00
+2026-05-14,Train ticket,Transport,645.38
+2026-05-14,Corner cafe,Dining,1077.24
+2026-05-16,Ride home,Transport,1080.63
+2026-05-17,Music streaming service,Subscriptions,790.00
+2026-05-17,Ride home,Transport,901.87
+2026-05-18,Train ticket,Transport,1056.68
+2026-05-18,Weekly market run,Groceries,5196.25
+2026-05-18,Emergency dental treatment,Healthcare,42000.00
+2026-05-19,Tea and short eats,Dining,613.39
+2026-05-20,Ride to campus,Transport,933.01
+2026-05-20,Ride to campus,Transport,759.28
+2026-05-20,Lunch with classmates,Dining,2868.56
+2026-05-20,Data add-on,Mobile,1599.79
+2026-05-21,Water bill,Utilities,2170.70
+2026-05-22,Bus pass top-up,Transport,984.24
+2026-05-22,Ride home,Transport,1176.49
+2026-05-22,Textbook purchase,Education,1769.29
+2026-05-23,Fast food dinner,Dining,867.23
+2026-05-23,Neighbourhood supermarket,Groceries,9101.00
+2026-05-23,Data add-on,Mobile,1558.96
+2026-05-24,Takeaway dinner,Dining,1471.69
+2026-05-24,Pharmacy visit,Healthcare,2375.41
+2026-05-25,Corner cafe,Dining,2960.34
+2026-05-25,Weekly market run,Groceries,3458.02
+2026-05-26,Train ticket,Transport,1156.82
+2026-05-26,Train ticket,Transport,1066.57
+2026-05-26,Bus pass top-up,Transport,502.45
+2026-05-26,Corner cafe,Dining,2070.14
+2026-05-26,Routine blood test,Healthcare,3965.99
+2026-05-27,Vegetable stall,Groceries,6151.80
+2026-05-28,Three-wheeler fare,Transport,888.24
+2026-05-28,Fast food dinner,Dining,2922.01
+2026-05-28,Light bulbs and batteries,Household,1289.53
+2026-05-29,Code assistant subscription,Subscriptions,3100.00
+2026-05-30,Bus pass top-up,Transport,1308.92
+2026-05-30,Three-wheeler fare,Transport,450.26
+2026-05-31,Fuel top-up,Transport,603.38
+2026-05-31,Corner cafe,Dining,2219.24
+2026-05-31,Lunch with classmates,Dining,1556.58
+2026-05-31,Bulk dry goods,Groceries,5650.91
+2026-06-01,Monthly rent,Housing,28000.00
+2026-06-01,Board game night,Entertainment,1198.49
+2026-06-01,Stationery haul,Education,3678.67
+2026-06-01,Routine blood test,Healthcare,3221.05
+2026-06-02,Mobile prepaid top-up,Mobile,1007.07
+2026-06-03,Neighbourhood supermarket,Groceries,4526.09
+2026-06-03,Lab consumables,Education,5358.33
+2026-06-03,Data add-on,Mobile,1244.62
+2026-06-03,Tailoring alteration,Clothing,6759.61
+2026-06-04,Home internet,Utilities,4500.00
+2026-06-04,Takeaway dinner,Dining,2936.84
+2026-06-04,Light bulbs and batteries,Household,4330.42
+2026-06-05,Bus pass top-up,Transport,1110.47
+2026-06-05,Lunch with classmates,Dining,2435.31
+2026-06-05,Fast food dinner,Dining,2102.34
+2026-06-05,Neighbourhood supermarket,Groceries,5389.69
+2026-06-06,Cloud file storage,Subscriptions,450.00
+2026-06-06,Three-wheeler fare,Transport,1223.92
+2026-06-06,Mobile prepaid top-up,Mobile,1774.92
+2026-06-07,Train ticket,Transport,767.62
+2026-06-07,Stationery haul,Education,5050.69
+2026-06-08,Electricity bill,Utilities,7465.91
+2026-06-08,Ride to campus,Transport,1348.39
+2026-06-08,Fuel top-up,Transport,769.39
+2026-06-09,Ride to campus,Transport,499.11
+2026-06-09,Light bulbs and batteries,Household,4360.27
+2026-06-09,Laundry service,Household,4309.30
+2026-06-10,Bus pass top-up,Transport,517.86
+2026-06-10,Bakery run,Dining,3133.15
+2026-06-10,Board game night,Entertainment,1758.43
+2026-06-11,Takeaway dinner,Dining,2259.69
+2026-06-11,Concert ticket,Entertainment,563.68
+2026-06-11,Online course fee,Education,5328.57
+2026-06-12,Three-wheeler fare,Transport,805.19
+2026-06-12,Routine blood test,Healthcare,2667.47
+2026-06-12,Graduation dinner for family,Dining,24500.00
+2026-06-13,Fuel top-up,Transport,431.41
+2026-06-13,Laundry service,Household,3151.98
+2026-06-14,Video streaming service,Subscriptions,1590.00
+2026-06-14,Bus pass top-up,Transport,675.73
+2026-06-14,Bus pass top-up,Transport,527.85
+2026-06-14,Fuel top-up,Transport,1413.60
+2026-06-14,Corner cafe,Dining,978.99
+2026-06-15,Train ticket,Transport,989.17
+2026-06-15,Takeaway dinner,Dining,869.40
+2026-06-15,Vegetable stall,Groceries,5077.04
+2026-06-16,Ride to campus,Transport,513.22
+2026-06-16,Bus pass top-up,Transport,1412.49
+2026-06-16,Vegetable stall,Groceries,6568.17
+2026-06-17,Music streaming service,Subscriptions,790.00
+2026-06-17,Fuel top-up,Transport,962.40
+2026-06-17,Bus pass top-up,Transport,760.58
+2026-06-18,Bakery run,Dining,1747.68
+2026-06-18,Bakery run,Dining,1857.14
+2026-06-19,Three-wheeler fare,Transport,834.76
+2026-06-19,Concert ticket,Entertainment,552.44
+2026-06-20,Ride to campus,Transport,343.32
+2026-06-20,Fuel top-up,Transport,1333.45
+2026-06-20,Corner cafe,Dining,687.14
+2026-06-21,Water bill,Utilities,2284.64
+2026-06-21,Ride home,Transport,1113.82
+2026-06-21,Ride to campus,Transport,593.93
+2026-06-21,Ride to campus,Transport,705.05
+2026-06-21,Weekly market run,Groceries,6049.66
+2026-06-22,Bulk dry goods,Groceries,7948.97
+2026-06-22,Neighbourhood supermarket,Groceries,4863.09
+2026-06-22,Vegetable stall,Groceries,8233.32
+2026-06-22,Routine blood test,Healthcare,2108.34
+2026-06-23,Three-wheeler fare,Transport,923.34
+2026-06-23,Ride to campus,Transport,1303.01
+2026-06-23,Lunch with classmates,Dining,2505.26
+2026-06-23,Tea and short eats,Dining,3100.53
+2026-06-24,Fuel top-up,Transport,932.90
+2026-06-24,Corner cafe,Dining,2580.41
+2026-06-24,Bulk dry goods,Groceries,4685.50
+2026-06-25,Three-wheeler fare,Transport,1177.82
+2026-06-25,Corner cafe,Dining,1972.66
+2026-06-25,Bakery run,Dining,1472.73
+2026-06-26,Corner cafe,Dining,1814.35
+2026-06-26,Light bulbs and batteries,Household,1859.98
+2026-06-27,Bakery run,Dining,973.78
+2026-06-28,Ride home,Transport,1090.52
+2026-06-28,Three-wheeler fare,Transport,327.43
+2026-06-28,Ride home,Transport,931.49
+2026-06-28,Lunch with classmates,Dining,1216.49
+2026-06-28,Takeaway dinner,Dining,1242.94
+2026-06-29,Code assistant subscription,Subscriptions,3100.00
+2026-06-29,Ride home,Transport,1246.07
+2026-06-29,Corner cafe,Dining,1454.72
+2026-06-29,Cinema ticket,Entertainment,3480.80
+2026-06-30,Train ticket,Transport,821.14
+2026-06-30,Tea and short eats,Dining,1974.18
+2026-06-30,Bakery run,Dining,1198.13
+2026-07-01,Monthly rent,Housing,28000.00
+2026-07-02,Three-wheeler fare,Transport,617.66
+2026-07-02,Bakery run,Dining,714.64
+2026-07-03,Stationery haul,Education,3277.80
+2026-07-03,Tailoring alteration,Clothing,4441.03
+2026-07-04,Home internet,Utilities,4500.00
+2026-07-04,Weekly market run,Groceries,4124.59
+2026-07-05,Train ticket,Transport,340.68
+2026-07-05,Ride home,Transport,844.29
+2026-07-05,Ride home,Transport,400.65
+2026-07-05,Fuel top-up,Transport,714.55
+2026-07-06,Cloud file storage,Subscriptions,450.00
+2026-07-06,Ride home,Transport,1186.76
+2026-07-06,Lunch with classmates,Dining,3095.70
+2026-07-07,Bus pass top-up,Transport,1108.81
+2026-07-08,Electricity bill,Utilities,6397.78
+2026-07-08,Ride to campus,Transport,925.35
+2026-07-08,Corner cafe,Dining,2832.49
+2026-07-08,Fast food dinner,Dining,1022.14
+2026-07-08,Cinema ticket,Entertainment,2011.08
+2026-07-09,Fast food dinner,Dining,3108.34
+2026-07-09,Data add-on,Mobile,1703.26
+2026-07-10,Ride to campus,Transport,1181.92
+2026-07-10,Ride to campus,Transport,390.12
+2026-07-11,Bus pass top-up,Transport,1095.59
+2026-07-11,Takeaway dinner,Dining,1665.00
+2026-07-11,Bulk dry goods,Groceries,6078.06
+2026-07-12,Three-wheeler fare,Transport,857.25
+2026-07-12,Cleaning supplies,Household,1833.71
+2026-07-13,Fuel top-up,Transport,649.90
+2026-07-13,Fuel top-up,Transport,775.18
+2026-07-13,Ride to campus,Transport,682.74
+2026-07-13,Bakery run,Dining,792.90
+2026-07-13,Bulk dry goods,Groceries,4190.65
+2026-07-13,Clinic consultation,Healthcare,3819.84
+2026-07-14,Video streaming service,Subscriptions,1590.00
+2026-07-14,Ride to campus,Transport,1207.44
+2026-07-14,Ride home,Transport,690.47
+2026-07-14,Three-wheeler fare,Transport,817.47
+2026-07-14,Light bulbs and batteries,Household,2528.03
+2026-07-14,Routine blood test,Healthcare,2639.02
+2026-07-15,Three-wheeler fare,Transport,1161.59
+2026-07-15,Fast food dinner,Dining,2616.38
+2026-07-15,Routine blood test,Healthcare,797.42
+2026-07-16,Train ticket,Transport,843.58
+2026-07-17,Music streaming service,Subscriptions,790.00
+2026-07-18,Ride home,Transport,827.38
+2026-07-18,Train ticket,Transport,492.87
+2026-07-18,Ride to campus,Transport,788.94
+2026-07-18,Takeaway dinner,Dining,3101.34
+2026-07-18,Tea and short eats,Dining,967.08
+2026-07-18,Bulk dry goods,Groceries,6588.44
+2026-07-18,Weekly market run,Groceries,6025.74
+2026-07-19,Data add-on,Mobile,1931.73
+2026-07-20,Train ticket,Transport,447.97
+2026-07-20,Lunch with classmates,Dining,2713.42
+2026-07-20,Online course fee,Education,3506.89
+2026-07-21,Water bill,Utilities,2056.59
+2026-07-21,Ride to campus,Transport,872.70
+2026-07-21,Train ticket,Transport,729.47
+2026-07-21,Fast food dinner,Dining,2251.18
+2026-07-21,Lunch with classmates,Dining,2883.48
+2026-07-21,Weekly market run,Groceries,8556.03
+2026-07-22,Corner cafe,Dining,2098.13
+2026-07-22,Neighbourhood supermarket,Groceries,5909.62
+2026-07-22,Concert ticket,Entertainment,3477.04
+2026-07-22,Textbook purchase,Education,5560.08
+2026-07-23,Train ticket,Transport,1408.32
+2026-07-25,Fuel top-up,Transport,1141.63
+2026-07-25,Lunch with classmates,Dining,2198.67
+2026-07-26,Three-wheeler fare,Transport,1030.67
+2026-07-26,Three-wheeler fare,Transport,1324.31
+2026-07-26,Weekly market run,Groceries,8885.84
+2026-07-27,Ride to campus,Transport,617.50
+2026-07-28,Three-wheeler fare,Transport,461.90
+2026-07-28,Printing and binding,Education,1295.33
 2026-07-29,Code assistant subscription,Subscriptions,3100.00
-2026-07-30,Airport transfer,Transport,4600.00
-2026-08-01,Hostel rent,Housing,28000.00
-2026-08-02,Weekly market run,Groceries,5940.50
-2026-08-04,Mobile prepaid top-up,Utilities,1000.00
-2026-08-05,Corner cafe,Dining,1420.00
-2026-08-07,Stationery haul,Education,1875.00
-2026-08-09,Electricity bill,Utilities,6980.00
-2026-08-10,Neighbourhood supermarket,Groceries,8120.00
-2026-08-12,Streaming service,Subscriptions,1590.00
-2026-08-13,Ride to campus,Transport,680.00
-2026-08-15,Fast food dinner,Dining,2260.00
+2026-07-30,Bakery run,Dining,2680.57
+2026-07-30,Airport transfer,Transport,12400.00
+2026-07-31,Corner cafe,Dining,2889.81
+2026-07-31,Weekly market run,Groceries,9232.84
+2026-08-01,Monthly rent,Housing,28000.00
+2026-08-01,Tea and short eats,Dining,901.50
+2026-08-02,Tea and short eats,Dining,1656.34
+2026-08-04,Home internet,Utilities,4500.00
+2026-08-05,Three-wheeler fare,Transport,457.68
+2026-08-05,Fast food dinner,Dining,1673.19
+2026-08-06,Cloud file storage,Subscriptions,450.00
+2026-08-06,Bus pass top-up,Transport,1015.65
+2026-08-06,Neighbourhood supermarket,Groceries,7776.02
+2026-08-06,Pharmacy visit,Healthcare,4353.45
+2026-08-07,Train ticket,Transport,1002.44
+2026-08-07,Bakery run,Dining,2131.70
+2026-08-07,Bakery run,Dining,2923.54
+2026-08-07,Printing and binding,Education,4031.25
+2026-08-08,Electricity bill,Utilities,5462.58
+2026-08-08,Ride to campus,Transport,1091.58
+2026-08-08,Ride to campus,Transport,794.27
+2026-08-09,Bus pass top-up,Transport,535.68
+2026-08-09,Tea and short eats,Dining,1754.34
+2026-08-10,Ride to campus,Transport,1353.53
+2026-08-10,Bus pass top-up,Transport,855.54
+2026-08-10,Bakery run,Dining,2680.12
+2026-08-10,Takeaway dinner,Dining,2494.73
+2026-08-11,Lunch with classmates,Dining,1448.85
+2026-08-12,Fuel top-up,Transport,448.78
+2026-08-13,Train ticket,Transport,978.94
+2026-08-14,Video streaming service,Subscriptions,1590.00
+2026-08-14,Fuel top-up,Transport,1304.70
+2026-08-14,Ride to campus,Transport,500.78
+2026-08-14,Bakery run,Dining,988.34
+2026-08-14,Weekly market run,Groceries,6233.21
+2026-08-15,Train ticket,Transport,1309.06
+2026-08-15,Kitchen refill,Household,1190.10
+2026-08-16,Ride to campus,Transport,519.76
+2026-08-16,Bus pass top-up,Transport,921.42
+2026-08-16,Bus pass top-up,Transport,745.34
+2026-08-16,Corner cafe,Dining,3105.83
+2026-08-17,Music streaming service,Subscriptions,790.00
+2026-08-17,Corner cafe,Dining,879.53
+2026-08-18,Vegetable stall,Groceries,9331.20
+2026-08-19,Ride to campus,Transport,523.75
+2026-08-19,Corner cafe,Dining,2025.72
+2026-08-19,Online course fee,Education,3367.65
+2026-08-20,Train ticket,Transport,1084.81
+2026-08-20,Three-wheeler fare,Transport,794.04
+2026-08-20,Corner cafe,Dining,2205.22
+2026-08-20,Bakery run,Dining,2587.35
+2026-08-20,Data add-on,Mobile,1904.62
+2026-08-21,Water bill,Utilities,1839.29
+2026-08-22,Ride home,Transport,1178.33
+2026-08-22,Train ticket,Transport,377.20
+2026-08-22,Stationery haul,Education,2657.84
+2026-08-23,Ride to campus,Transport,783.89
+2026-08-23,Three-wheeler fare,Transport,619.95
+2026-08-24,Weekly market run,Groceries,4804.19
+2026-08-24,Light bulbs and batteries,Household,4169.69
+2026-08-24,Data add-on,Mobile,1812.56
+2026-08-24,Tailoring alteration,Clothing,8591.45
+2026-08-26,Fuel top-up,Transport,1124.77
+2026-08-26,Bulk dry goods,Groceries,8734.07
+2026-08-26,Neighbourhood supermarket,Groceries,6278.44
+2026-08-26,Everyday shirt,Clothing,1607.84
+2026-08-27,Bulk dry goods,Groceries,6336.43
+2026-08-27,Cleaning supplies,Household,1603.23
+2026-08-28,Train ticket,Transport,325.56
+2026-08-28,Printing and binding,Education,2224.95
+2026-08-29,Code assistant subscription,Subscriptions,3100.00
+2026-08-29,Ride to campus,Transport,1274.88
+2026-08-29,Fuel top-up,Transport,988.13
+2026-08-29,Bulk dry goods,Groceries,6101.57
+2026-08-30,Train ticket,Transport,727.70
+2026-08-30,Weekly market run,Groceries,8248.86
+2026-08-30,Board game night,Entertainment,524.51
+2026-08-31,Train ticket,Transport,481.88
+2026-08-31,Fuel top-up,Transport,781.23
+2026-08-31,Museum entry,Entertainment,2530.33

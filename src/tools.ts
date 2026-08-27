@@ -15,6 +15,13 @@ import { registerTool } from './webmcp';
 
 const readOnly = { readOnlyHint: true };
 
+/**
+ * A loose threshold over a year of data can match dozens of rows. The table
+ * still highlights every one of them, but the tool result lists only the
+ * strongest — the premise is that aggregates leave the tab, not records.
+ */
+const ANOMALY_LIST_LIMIT = 25;
+
 const noData = {
   error: 'no_data_loaded',
   message: 'No spreadsheet is loaded. Ask the user to choose a CSV file first.',
@@ -187,14 +194,14 @@ export async function registerTools(): Promise<void> {
   await registerTool<{ threshold?: number }>({
     name: 'find_anomalies',
     description:
-      'Find rows that are unusually large compared with the rest of their own category, using a z-score within each category. Categories with fewer than three rows are skipped. Highlights whatever it finds.',
+      'Find rows that are unusually large compared with the rest of their own category, using a z-score within each category. Categories with fewer than three rows are skipped. Returns the count, the strongest outliers, and highlights every one of them in the table.',
     inputSchema: {
       type: 'object',
       properties: {
         threshold: {
           type: 'number',
           description:
-            'How many standard deviations above the category mean counts as unusual. Defaults to 1.2; raise it to be stricter.',
+            'How many standard deviations above the category mean counts as unusual. Defaults to 2.5; raise it to be stricter, or lower it to surface milder variation.',
         },
       },
     },
@@ -202,10 +209,11 @@ export async function registerTools(): Promise<void> {
     execute: (args) => {
       if (getRows().length === 0) return noData;
 
-      const anomalies = findAnomalies(args?.threshold ?? 1.2);
+      const anomalies = findAnomalies(args?.threshold);
       if (anomalies.length === 0) {
         clearHighlight();
         return {
+          anomalyCount: 0,
           anomalies: [],
           effect: 'Nothing stood out at this threshold; the table is left unhighlighted.',
         };
@@ -216,12 +224,16 @@ export async function registerTools(): Promise<void> {
         `${anomalies.length} unusual rows`
       );
 
+      const listed = anomalies.slice(0, ANOMALY_LIST_LIMIT);
+
       return {
-        anomalies: anomalies.map((a) => ({
+        anomalyCount: anomalies.length,
+        anomalies: listed.map((a) => ({
           ...summarise(a.row),
           categoryMean: a.categoryMean,
           zScore: a.zScore,
         })),
+        anomaliesTruncated: anomalies.length > listed.length,
         effect: `${anomalies.length} unusual rows are now highlighted in the table; all other rows are dimmed.`,
       };
     },

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 import {
   loadCsv,
@@ -153,13 +154,15 @@ test('findAnomalies flags the outlier within a category', () => {
 2026-07-08,Taxi ride,Transport,500
 2026-07-30,Airport transfer,Transport,4600
 `, 'transport.csv');
-  const anomalies = findAnomalies();
+  const anomalies = findAnomalies(1.5);
   const top = anomalies[0];
   assert.equal(top.row.category, 'Transport');
   assert.equal(top.row.description, 'Airport transfer');
   assert.equal(top.row.amount, 4600);
   assert.equal(top.categoryMean, 1440);
   assert.equal(top.zScore, 2);
+
+  assert.deepEqual(findAnomalies(), [], 'the 2.5 default is stricter than this fixture');
 });
 
 test('findAnomalies skips categories with fewer than three rows', () => {
@@ -167,7 +170,7 @@ test('findAnomalies skips categories with fewer than three rows', () => {
 2026-07-01,a,Small,100
 2026-07-02,b,Small,100000
 `, 'small.csv');
-  assert.deepEqual(findAnomalies(), []);
+  assert.deepEqual(findAnomalies(0.5), []);
 });
 
 test('findAnomalies respects a custom threshold', () => {
@@ -199,4 +202,33 @@ test('highlight lifecycle: set, read, clear', () => {
 test('loadCsv handles CRLF line endings and trimmed headers', () => {
   loadCsv('date,description,category,amount\r\n2026-07-01,x,Food,100\r\n\r\n2026-07-02,y,Food,200\r\n', 'crlf.csv');
   assert.equal(describeDataset().rowCount, 2);
+});
+
+/**
+ * The bundled sample is what the demo narrates and what a judge sees on first
+ * paint, so its headline figures are pinned here. Regenerating it with
+ * `node scripts/generate-sample.mjs` must not move them; if it does, the
+ * narration and the Devpost description are out of date too.
+ */
+test('the bundled sample dataset yields the figures the demo relies on', () => {
+  const csv = readFileSync(new URL('../public/sample-expenses.csv', import.meta.url), 'utf8');
+  const load = loadCsv(csv, 'sample-expenses.csv');
+  assert.deepEqual(load, { rows: 965, skipped: 0 });
+
+  const d = describeDataset();
+  assert.equal(d.totalAmount, 2509504.48);
+  assert.equal(d.categories.length, 12);
+  assert.deepEqual(d.dateRange, { earliest: '2025-09-01', latest: '2026-08-31' });
+
+  assert.equal(monthlyTrend().length, 12);
+  assert.deepEqual(sumByCategory()[0], { category: 'Groceries', total: 576485.41, count: 95 });
+
+  const anomalies = findAnomalies();
+  assert.equal(anomalies.length, 4, 'exactly the four planted outliers, at the default threshold');
+  assert.equal(anomalies[0].row.description, 'Airport transfer');
+  assert.equal(anomalies[0].zScore, 16.84);
+  assert.deepEqual(
+    anomalies.map((a) => a.row.category),
+    ['Transport', 'Dining', 'Household', 'Healthcare'],
+  );
 });

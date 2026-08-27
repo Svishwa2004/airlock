@@ -3,6 +3,7 @@ import { registerTools } from './tools';
 import { isSupported, registeredNames } from './webmcp';
 
 const rowsBody = document.querySelector<HTMLTableSectionElement>('#rows')!;
+const tableWrap = document.querySelector<HTMLElement>('.table-wrap')!;
 const statusEl = document.querySelector<HTMLElement>('#status')!;
 const badgeEl = document.querySelector<HTMLElement>('#tool-badge')!;
 const noteEl = document.querySelector<HTMLElement>('#highlight-note')!;
@@ -22,6 +23,19 @@ const makeMoney = (code: string): Intl.NumberFormat => {
 
 let money = makeMoney('LKR');
 
+/**
+ * Highlighting a handful of rows out of a thousand is invisible unless the
+ * table moves, so the first hit is scrolled into the frame — but only when the
+ * selection actually changes, otherwise a currency change would yank the view.
+ */
+let shownHighlight = '';
+
+function revealFirstHit(): void {
+  const hit = rowsBody.querySelector<HTMLTableRowElement>('tr.hit');
+  if (!hit) return;
+  tableWrap.scrollTop = Math.max(0, hit.offsetTop - tableWrap.clientHeight / 2);
+}
+
 function renderRows(): void {
   const rows = getRows();
   const highlight = getHighlight();
@@ -38,6 +52,13 @@ function renderRows(): void {
   rowsBody.replaceChildren(...rows.map((row) => renderRow(row, hits)));
 
   noteEl.textContent = highlight?.note ? `Agent highlighted: ${highlight.note}` : '';
+
+  const selection = highlight?.ids.join(',') ?? '';
+  if (selection !== shownHighlight) {
+    shownHighlight = selection;
+    if (selection) revealFirstHit();
+    else tableWrap.scrollTop = 0;
+  }
 }
 
 function renderRow(row: Row, hits: Set<number>): HTMLTableRowElement {

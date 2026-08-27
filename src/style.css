@@ -135,10 +135,22 @@ button:focus-visible,
   font-size: 13px;
 }
 
+/**
+ * A year of real data is roughly a thousand rows, so the table scrolls inside
+ * a fixed frame rather than making the page forty screens tall — otherwise the
+ * rows an agent highlights are usually somewhere off-screen.
+ */
 .table-wrap {
+  position: relative;
+  max-height: 60vh;
+  overflow: auto;
   border: 1px solid var(--line);
   border-radius: 12px;
-  overflow: hidden;
+}
+
+.table-wrap:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 table {
@@ -154,6 +166,9 @@ td {
 }
 
 th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background: var(--panel);
   font-size: 12px;
   text-transform: uppercase;
