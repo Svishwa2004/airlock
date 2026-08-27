@@ -1,0 +1,10 @@
+# Build configuration for continuous deployment from GitHub. Kept in the repo
+# so the build is reproducible and inspectable rather than dashboard-only.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Pin the Node major the build was verified against locally. Vite 8 requires
+  # Node 20.19+/22.12+, so an older default build image would fail otherwise.
+  NODE_VERSION = "24"
