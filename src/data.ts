@@ -112,6 +112,9 @@ export function loadCsv(text: string, fileName: string): { rows: number; skipped
   store.rows = rows;
   store.fileName = fileName;
   store.highlight = null;
+  // Re-arm privacy on every load. The most sensitive moment is a freshly
+  // chosen file, so a new dataset must never inherit a previous "off".
+  store.privacy = true;
   notify();
 
   return { rows: rows.length, skipped };

@@ -13,6 +13,8 @@ import {
   setHighlight,
   getHighlight,
   clearHighlight,
+  getPrivacyMode,
+  setPrivacyMode,
 } from './data.ts';
 
 const SAMPLE = `date,description,category,amount
@@ -68,6 +70,14 @@ test('loadCsv resets previous data and highlight on each load', () => {
   loadCsv(SAMPLE, 'b.csv');
   assert.equal(getHighlight(), null);
   assert.equal(describeDataset().rowCount, 12);
+});
+
+test('loadCsv re-arms privacy mode on each load', () => {
+  loadCsv(SAMPLE, 'a.csv');
+  setPrivacyMode(false);
+  assert.equal(getPrivacyMode(), false);
+  loadCsv(SAMPLE, 'b.csv');
+  assert.equal(getPrivacyMode(), true, 'a freshly loaded dataset must never inherit privacy off');
 });
 
 test('describeDataset reports shape without rows', () => {

@@ -223,6 +223,47 @@ button:focus-visible,
   color: #f0b849;
 }
 
+.examples {
+  margin: 0 0 20px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.examples-heading {
+  margin: 0 0 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.examples-lead {
+  margin: 0 0 12px;
+  max-width: 62ch;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.examples-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.examples-list li {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+}
+
 /**
  * A year of real data is roughly a thousand rows, so the table scrolls inside
  * a fixed frame rather than making the page forty screens tall — otherwise the

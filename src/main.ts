@@ -1,4 +1,4 @@
-import { getHighlight, getRows, loadCsv, setPrivacyMode, subscribe, type Row } from './data.ts';
+import { getHighlight, getPrivacyMode, getRows, loadCsv, setPrivacyMode, subscribe, type Row } from './data.ts';
 import { registerTools } from './tools.ts';
 import { isSupported, registeredNames } from './webmcp.ts';
 
@@ -117,12 +117,14 @@ function report(result: { rows: number; skipped: number }, name: string): void {
 async function loadSample(): Promise<void> {
   const response = await fetch('sample-expenses.csv');
   report(loadCsv(await response.text(), 'sample-expenses.csv'), 'sample-expenses.csv');
+  reflectPrivacyState();
 }
 
 fileInput.addEventListener('change', async () => {
   const file = fileInput.files?.[0];
   if (!file) return;
   report(loadCsv(await file.text(), file.name), file.name);
+  reflectPrivacyState();
 });
 
 sampleButton.addEventListener('click', () => {
@@ -145,6 +147,16 @@ function renderPrivacyState(): void {
   privacyStateEl.textContent = on
     ? 'On — the agent receives counts, totals and category names. Rows it finds are highlighted here for you to read, not sent to the model.'
     : 'Off — the agent can now receive the contents of rows it looks at, including dates, descriptions and amounts.';
+}
+
+/**
+ * loadCsv re-arms privacy to on for every new dataset, so the checkbox is
+ * mirrored back from the store after a load — a freshly chosen file must never
+ * inherit a previous "off".
+ */
+function reflectPrivacyState(): void {
+  privacyInput.checked = getPrivacyMode();
+  renderPrivacyState();
 }
 
 privacyInput.addEventListener('change', () => {
